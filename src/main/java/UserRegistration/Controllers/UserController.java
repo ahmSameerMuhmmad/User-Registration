@@ -17,7 +17,7 @@ public class UserController {
 
     @PostMapping("/registration")
     public ResponseEntity<String>addUser(@RequestBody User user){
-
+        //// use try and catch block
         try{
             String response=userService.addUser(user);
             return new ResponseEntity<>(response,HttpStatus.ACCEPTED);
