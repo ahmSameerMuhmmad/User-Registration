@@ -49,8 +49,8 @@ public class UserController {
     @DeleteMapping("/deleteUserByEmail")
     public ResponseEntity<String> deleteUserByEmail(@RequestParam("email")String email){
         try{
-            String response=userService.deleteUserByEmail(email);
-            return new ResponseEntity<>(response,HttpStatus.ACCEPTED);
+            userService.deleteUserByEmail(email);
+            return new ResponseEntity<>("User deleted successfully!",HttpStatus.ACCEPTED);
         }
         catch (Exception e){
             String response="User not deleted";
